@@ -160,7 +160,7 @@ def main():
     time_df = get_time_lstm_df(df, basic_categorial_df, label)
     kf = KFold()
     accs, sens, spes, bacs = [], [], [], []
-    normalization = True
+    normalization = False
     time_df = time_df.sample(frac=1).reset_index(drop=True)
     for train_index, test_index in kf.split(time_df):
         for idx in test_index:
